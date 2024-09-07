@@ -3,161 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Phenomenal Visuals</title>
-    <style>
-        body {
-            font-family: 'Times New Roman', Times, serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-            color: #333;
-        }
-
-        .header {
-            text-align: center;
-            padding: 20px;
-            background-color: #222;
-            color: #fff;
-        }
-
-        .header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 5px;
-            padding: 20px;
-        }
-
-        .grid img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .grid img:hover {
-            transform: scale(1.05);
-        }
-
-        .services {
-            padding: 20px;
-            background-color: #f4f4f4;
-        }
-
-        .services h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .services ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .services ul li {
-            background: #ddd;
-            margin: 10px 0;
-            padding: 10px;
-            border-left: 5px solid #007BFF;
-            font-size: 1.2rem;
-        }
-
-        .contact {
-            text-align: center;
-            padding: 20px;
-            background-color: #222;
-            color: #fff;
-        }
-
-        .contact p {
-            margin: 10px 0;
-            font-size: 1.2rem;
-        }
-
-        .contact a {
-            color: #007BFF;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact a:hover {
-            text-decoration: underline;
-        }
-
-        .deposit-info {
-            background-color: #f4f4f4;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .deposit-info p {
-            margin: 10px 0;
-            font-size: 1.2rem;
-        }
-
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 480px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="container">
+        <header>
+            <h1>Phenomenal Visuals</h1>
+            <p>Photography & Videography by Papi</p>
+        </header>
 
-    <div class="header">
-        <h1>Phenomenal Visuals</h1>
-        <p>Photography & Videography by Papi</p>
-    </div>
+        <section class="slider">
+            <div class="slider-wrapper">
+                <div class="slider-item"><img src="Images/IMG3485.jpg" alt="Slider Image 1"></div>
+                <div class="slider-item"><img src="Images/IMG3119.jpg" alt="Slider Image 2"></div>
+                <div class="slider-item"><img src="Images/IMG4225Edit.jpg" alt="Slider Image 3"></div>
+                <div class="slider-item"><img src="Images/IMG1425.jpg" alt="Slider Image 4"></div>
+                <div class="slider-item"><img src="Images/IMG2163.jpg" alt="Slider Image 5"></div>
+                <div class="slider-item"><img src="Images/IMG2845.jpg" alt="Slider Image 6"></div>
+                <div class="slider-item"><img src="Images/IMG1111.jpg" alt="Slider Image 7"></div>
+                <div class="slider-item"><img src="Images/IMG2971.jpg" alt="Slider Image 8"></div>
+                <div class="slider-item"><img src="Images/IMG0315.jpg" alt="Slider Image 9"></div>
+                <div class="slider-item"><img src="Images/IMG0176.jpg" alt="Slider Image 10"></div>
+                <div class="slider-item"><img src="Images/IMG12272.jpg" alt="Slider Image 11"></div>
+                <div class="slider-item"><img src="Images/IMG4248Edit.jpg" alt="Slider Image 12"></div>
+                <!-- Add all 12 images here -->
+            </div>
+            <div class="slider-controls">
+                <span class="arrow-left" onclick="moveSlide(-1)">&#10094;</span>
+                <span class="arrow-right" onclick="moveSlide(1)">&#10095;</span>
+            </div>
+        </section>
 
-    <div class="grid">
-        <img src="./images/IMG12603.jpg">
-        <img src="./images/IMG2289.jpg">
-        <img src="./images/IMG2845.jpg">
-        <img src="./images/IMG4225Edit.jpg">
-        <img src="./images/IMG0315.jpg">
-        <img src="./images/IMG2971.jpg">
-    </div>
+        <section class="services">
+            <h2>Our Services</h2>
+            <div class="service-dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown('general-services')">General Services</button>
+                <div class="dropdown-content" id="general-services">
+                    <ul>
+                        <li>Single photo/portrait - R20</li>
+                        <li>Single photo/portrait (edited) - R30</li>
+                        <li>Vintage portrait/Vector art - R40</li>
+                        <li>Per hour (unlimited photos) - R700</li>
+                        <li>Every additional hour costs R120</li>
+                    </ul>
+                </div>
+            </div>
 
-    <div class="services">
-        <h2>Services & Pricing</h2>
-        <ul>
-            <li>Single photo/portrait - R20</li>
-            <li>Single photo/portrait (edited) - R30</li>
-            <li>Vintage portrait/Vector art - R40</li>
-            <li>Per hour (unlimited) - R700</li>
-            <li>Every additional hour - R120</li>
-            <ul>
-                <p><em><strong>Event Coverage</strong></em></p>
-                <li>Birthday celebrations (photos only) - R1 200</li>
-                <li>Birthday celebrations package (includes 1 video) - R1 500</li>
-                <li>Baby shower (photos only) - R1 200</li>
-                <li>Baby shower package (includes 1 video) - R1 500</li>
-                <li>Matric Farewell (photos only) - R1 000</li>
-                <li>Matric Farewell package (includes 2 videos, 1 GRWM video, 1 slideshow) - R1 600</li>
-            </ul>
-        </ul>
-    </div>
+            <div class="service-dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown('prom')">Matric Farewell/Prom</button>
+                <div class="dropdown-content" id="prom">
+                    <ul>
+                        <li>Matric Farewell (photos only) - R1 000</li>
+                        <li>Matric Farewell package (includes 2 videos, 1 GRWM video, 1 slideshow) - R1 800</li>
+                    </ul>
+                </div>
+            </div>
 
-    <div class="contact">
-        <p>Contact: +27 66 265 0535 (WhatsApp and phone)</p>
-        <p><a href="https://wa.me/27662650535">Click to chat on WhatsApp</a></p>
-    </div>
+            <div class="service-dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown('baby-shower')">Baby Shower</button>
+                <div class="dropdown-content" id="baby-shower">
+                    <ul>
+                        <li>Baby shower (photos only) - R1 200</li>
+                        <li>Baby shower package (includes 1 video) - R1 600</li>
+                    </ul>
+                </div>
+            </div>
 
-    <div class="deposit-info">
-        <p>A 50% deposit of the amount for the services is payable before any service is rendered.</p>
-        <p>Bank: FNB | Account Number: 62745172792</p>
-    </div>
+            <div class="service-dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown('birthday')">Birthday Celebration</button>
+                <div class="dropdown-content" id="birthday">
+                    <ul>
+                        <li>Birthday celebrations (photos only) - R1 200</li>
+                        <li>Birthday celebrations package (includes 1 video) - R1 600</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
+        <div class="contact">
+            <p>Contact: +27 66 265 0535 (WhatsApp and phone)</p>
+            <p><a href="https://wa.me/27662650535">Click to chat on WhatsApp</a></p>
+        </div>
+    
+        <div class="deposit-info">
+            <p>A 50% deposit of the amount for the services is payable before any service is rendered.</p>
+            <p>Bank: FNB | Account Number: 62745172792</p>
+        </div>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
